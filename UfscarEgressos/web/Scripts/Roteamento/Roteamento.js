@@ -12,7 +12,7 @@ App.config(['$routeProvider',
       when('/empregador', { templateUrl: '/UfscarEgressos/Views/empregador.html', controller: 'EmpregadorController'}).
       when('/postagemNoticia', { templateUrl: '/UfscarEgressos/Views/postagemNoticia.html', controller: 'PostagemNoticiaController'}).
       otherwise({
-        redirectTo: '/states'
+        redirectTo: '/Erro/'
       });
   }
 ]);
