@@ -1,0 +1,18 @@
+
+<div>
+    <div>Arquivo: <input type="file" id="fileInput" /></div>
+    <div class="cropArea" style="float:left">
+        <div>
+            Imagem Original:
+        </div>
+        <div>
+            <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+        </div>
+    </div>
+    <div style="float:left">
+        <div>Imagem Recortada:</div>
+        <div style="width:300px;height:300px;background-color: #c9e2e5;">
+            <img ng-src="{{myCroppedImage}}" />
+        </div>
+    </div>
+</div>

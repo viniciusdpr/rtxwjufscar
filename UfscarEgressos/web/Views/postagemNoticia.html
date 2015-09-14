@@ -1,0 +1,104 @@
+<section class="ng-scope"><!-- Page content--><!-- uiView:  -->
+    <div ui-view="" autoscroll="false" ng-class="app.viewAnimation" class="content-wrapper ng-scope ng-fadeInUp">
+        <h3 class="ng-scope">Nova Notícia</h3>
+        <div ng-controller="ArticleController as art" class="container-fluid ng-scope"><!-- ngRepeat: alert in art.alerts -->
+            <div class="alert ng-isolate-scope alert-info alert-dismissable" ng-class="['alert-' + (type || 'warning'), closeable ? 'alert-dismissable' : null]" role="alert" ng-repeat="alert in art.alerts" type="info" close="art.closeAlert($index)">
+                <button ng-show="closeable" type="button" class="close" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Fechar</span>
+                </button>
+                <div ng-transclude="">
+                    <em class="fa fa-exclamation-circle fa-lg fa-fw ng-scope"></em>
+                </div>
+            </div><!-- end ngRepeat: alert in art.alerts -->
+            <div class="row"><!-- Article Content-->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form action="" class="ng-pristine ng-valid">
+                                <input type="text" name="article-title" placeholder="Título da Noticia" class="mb-lg form-control input-lg"><!-- Wysiswyg editor-->
+                                <div text-angular="" ng-model="art.htmlContent" name="wysiswyg-editor" class="btn-group-small ng-pristine ng-untouched ng-valid ng-isolate-scope ta-root">
+                                    <div text-angular-toolbar="" name="textAngularToolbar1720690904185176" class="ng-scope ng-isolate-scope ta-toolbar btn-toolbar">
+                                        <div class="btn-group"><button type="button" class="btn btn-default ng-scope" name="h1" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 1" unselectable="on" disabled="disabled">H1</button><button type="button" class="btn btn-default ng-scope" name="h2" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 2" unselectable="on" disabled="disabled">H2</button><button type="button" class="btn btn-default ng-scope" name="h3" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 3" unselectable="on" disabled="disabled">H3</button><button type="button" class="btn btn-default ng-scope" name="h4" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 4" unselectable="on" disabled="disabled">H4</button><button type="button" class="btn btn-default ng-scope" name="h5" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 5" unselectable="on" disabled="disabled">H5</button><button type="button" class="btn btn-default ng-scope" name="h6" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Heading 6" unselectable="on" disabled="disabled">H6</button><button type="button" class="btn btn-default ng-scope" name="p" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Paragraph" unselectable="on" disabled="disabled">P</button><button type="button" class="btn btn-default ng-scope" name="pre" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Preformatted text" unselectable="on" disabled="disabled">pre</button><button type="button" class="btn btn-default ng-scope" name="quote" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Quote/unquote selection or paragraph" unselectable="on" disabled="disabled"><i class="fa fa-quote-right"></i></button></div>
+                                        <div class="btn-group"><button type="button" class="btn btn-default ng-scope" name="bold" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Bold" unselectable="on" disabled="disabled"><i class="fa fa-bold"></i></button><button type="button" class="btn btn-default ng-scope" name="italics" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Italic" unselectable="on" disabled="disabled"><i class="fa fa-italic"></i></button><button type="button" class="btn btn-default ng-scope" name="underline" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Underline" unselectable="on" disabled="disabled"><i class="fa fa-underline"></i></button><button type="button" class="btn btn-default ng-scope" name="strikeThrough" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Strikethrough" unselectable="on" disabled="disabled"><i class="fa fa-strikethrough"></i></button><button type="button" class="btn btn-default ng-scope" name="ul" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Unordered List" unselectable="on" disabled="disabled"><i class="fa fa-list-ul"></i></button><button type="button" class="btn btn-default ng-scope" name="ol" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Ordered List" unselectable="on" disabled="disabled"><i class="fa fa-list-ol"></i></button><button type="button" class="btn btn-default ng-scope" name="redo" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Redo" unselectable="on" disabled="disabled"><i class="fa fa-repeat"></i></button><button type="button" class="btn btn-default ng-scope" name="undo" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Undo" unselectable="on" disabled="disabled"><i class="fa fa-undo"></i></button><button type="button" class="btn btn-default ng-scope" name="clear" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Clear formatting" unselectable="on" disabled="disabled"><i class="fa fa-ban"></i></button></div>
+                                        <div class="btn-group"><button type="button" class="btn btn-default ng-scope" name="justifyLeft" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Align text left" unselectable="on" disabled="disabled"><i class="fa fa-align-left"></i></button><button type="button" class="btn btn-default ng-scope" name="justifyCenter" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Center" unselectable="on" disabled="disabled"><i class="fa fa-align-center"></i></button><button type="button" class="btn btn-default ng-scope" name="justifyRight" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Align text right" unselectable="on" disabled="disabled"><i class="fa fa-align-right"></i></button><button type="button" class="btn btn-default ng-scope" name="indent" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Increase indent" unselectable="on" disabled="disabled"><i class="fa fa-indent"></i></button><button type="button" class="btn btn-default ng-scope" name="outdent" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Decrease indent" unselectable="on" disabled="disabled"><i class="fa fa-outdent"></i></button></div>
+                                        <div class="btn-group"><button type="button" class="btn btn-default ng-scope" name="html" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Toggle html / Rich Text" unselectable="on" disabled="disabled"><i class="fa fa-code"></i></button><button type="button" class="btn btn-default ng-scope" name="insertImage" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Insert image" unselectable="on" disabled="disabled"><i class="fa fa-picture-o"></i></button><button type="button" class="btn btn-default ng-scope" name="insertLink" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Insert / edit link" unselectable="on" disabled="disabled"><i class="fa fa-link"></i></button><button type="button" class="btn btn-default ng-scope" name="insertVideo" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" title="Insert video" unselectable="on" disabled="disabled"><i class="fa fa-youtube-play"></i></button><div id="toolbarWC" style="display:block; min-width:100px;" class="btn btn-default ng-scope" name="wordcount" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" unselectable="on" disabled="disabled">Words: <span ng-bind="wordcount" class="ng-binding">0</span></div><div id="toolbarCC" style="display:block; min-width:120px;" class="btn btn-default ng-scope" name="charcount" ta-button="ta-button" ng-disabled="isDisabled()" tabindex="-1" ng-click="executeAction()" ng-class="displayActiveToolClass(active)" unselectable="on" disabled="disabled">Characters: <span ng-bind="charcount" class="ng-binding">0</span></div></div>
+                                    </div>
+                                    <div class="ta-scroll-window ng-scope ta-text ta-editor form-control" ng-hide="showHtml">
+                                        <div class="popover fade bottom" style="max-width: none; width: 305px;">
+                                            <div class="arrow"></div>
+                                            <div class="popover-content"></div></div>
+                                        <div class="ta-resizer-handle-overlay">
+                                            <div class="ta-resizer-handle-background"></div>
+                                            <div class="ta-resizer-handle-corner ta-resizer-handle-corner-tl"></div>
+                                            <div class="ta-resizer-handle-corner ta-resizer-handle-corner-tr"></div>
+                                            <div class="ta-resizer-handle-corner ta-resizer-handle-corner-bl"></div>
+                                            <div class="ta-resizer-handle-corner ta-resizer-handle-corner-br"></div>
+                                            <div class="ta-resizer-handle-info"></div></div>
+                                        <div id="taTextElement1720690904185176" contenteditable="true" ta-bind="ta-bind" ng-model="html" class="ng-pristine ng-untouched ng-valid ta-bind">
+                                            <p>Escreva aqui a noticia
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <textarea id="taHtmlElement1720690904185176" ng-show="showHtml" ta-bind="ta-bind" ng-model="html" class="ng-pristine ng-untouched ng-valid ng-scope ta-bind ta-html ta-editor form-control ng-hide"></textarea>
+                                    <input type="hidden" tabindex="-1" style="display: none;" name="wysiswyg-editor" value="Article content..."></div>
+                                <br>
+                                <p>Observações</p>
+                                <textarea cols="6" class="mb-lg form-control"></textarea>
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        
+                                        <button type="button" class="btn btn-danger m-r-10 m-t-10"><em class="fa fa-trash fa-fw"></em>Remover</button>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-primary m-t-10"><em class="fa fa-check fa-fw"></em>Salvar</button>
+                                    </div>
+                                </div></form></div></div><p class="lead">Notícias Publicadas</p>
+                                <div class="panel"><div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th><strong>Data</strong></th>
+                                                    <th><strong>Titulo</strong></th>
+                                                    <th><strong>Noticia</strong></th>
+                                                    <th class="text-center"><strong>Ativo</strong></th>
+                                                    <th style="width:130px" class="text-right"><strong>Ações</strong></th>
+                                                </tr></thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>10/05/2015</td>
+                                                    <td><a href="">Conheça o Evento: è dia de Java</a>
+                                                    </td><td>Sed quis eros libero, a euismod nisl....</td>
+                                                    <td class="text-center"><label class="switch"><input checked="checked" type="checkbox"><span></span></label></td>
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary"><em class="fa fa-pencil"></em></button>
+                                                        <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"></em></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10/07/2015</td>
+                                                    <td><a href="">Universidade Aberta</a></td>
+                                                    <td>Nulla facilisi. </td>
+                                                    <td class="text-center"><label class="switch"><input checked="checked" type="checkbox"><span></span></label></td>
+                                                    <td class="text-right"><button type="button" class="btn btn-sm btn-primary"><em class="fa fa-pencil"></em></button><button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"></em></button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11/05/2015</td>
+                                                    <td><a href="">Visita apresenta o curso de medicina aos alunos do Ensino Médio</a></td>
+                                                    <td>Quisque enim nisi, semper non pulvinar et, aliquam id lorem...</td>
+                                                    <td class="text-center"><label class="switch"><input checked="checked" type="checkbox"><span></span></label></td>
+                                                    <td class="text-right"><button type="button" class="btn btn-sm btn-primary"><em class="fa fa-pencil"></em></button><button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"></em></button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10/06/2015</td><td><a href="">VII Semeco discute a atual conjuntura da economia brasileira </a></td>
+                                                    <td>Nulla facilisi. </td>
+                                                    <td class="text-center"><label class="switch"><input checked="checked" type="checkbox"><span></span></label></td>
+                                                    <td class="text-right"><button type="button" class="btn btn-sm btn-primary"><em class="fa fa-pencil"></em></button><button type="button" disabled="" class="btn btn-sm btn-danger"><em class="fa fa-trash"></em></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                </div>
+                <!-- Article sidebar-->
+            </div></div></div></section>

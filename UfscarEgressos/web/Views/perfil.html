@@ -1,0 +1,239 @@
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        
+        <script type="text/ng-template" id="/myModalContent.html">
+            <div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button><h4 id="myModalLabel" class="modal-title">Recortar foto</h4></div>
+            <div class="modal-body">
+                <modal-recortar-foto></modal-recortar-foto>
+            </div>
+            <div class="modal-footer"><button ng-click="ok()" class="btn btn-primary">OK</button><button ng-click="cancel()" class="btn btn-warning">Cancel</button></div>
+        </script>
+        <form action="/" method="POST" form-wizard="" validate-steps="true" validate-form="" steps="4">
+            <div class="form-wizard wizard-horizontal">
+                <!-- START wizard steps indicator-->
+                <ol class="row">
+                    <li ng-class="{'active':ativa(1)}" ng-click="abrir(1)" class="col-md-3">
+                        <h4>Dados pessoais</h4>
+                        <small class="text-muted">Informe aqui os seus dados pessoais.</small>
+                    </li>
+                    <li ng-class="{'active':ativa(2)}" ng-click="abrir(2)" class="col-md-3">
+                        <h4>Contato</h4>
+                        <small class="text-muted">Informe aqui os seus para contato.</small>
+                    </li>
+                    <li ng-class="{'active':ativa(3)}" ng-click="abrir(3)" class="col-md-3">
+                        <h4>Login</h4>
+                        <small class="text-muted">Informe aqui os seus dados de Login.</small>
+                    </li>
+                    <li ng-class="{'active':ativa(4)}" ng-click="abrir(4)" class="col-md-3">
+                        <h4>Concluído!</h4>
+                        <small class="text-muted">Enviar dados.</small>
+                    </li>
+                </ol>
+                <!-- END wizard steps indicator-->
+                <!-- START Wizard Step inputs -->
+                <div id="step1" ng-show="ativa(1)">
+                    <legend>Meus Dados Pessoais</legend>
+                    <!-- START row -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <div class="controls">
+                                    <input type="text" name="nome" data-parsley-group="step1" placeholder="Seu nome" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Sobrenome</label>
+                                <div class="controls">
+                                    <input type="text" name="sobrenome" data-parsley-group="step1" placeholder="Seu sobrenome" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Data de Nascimento</label>
+                                <div class="controls">
+                                    <input type="date" name="nascimento" data-parsley-group="step1" placeholder="00/00/0000" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Sexo</label>
+                                <div class="controls">
+                                    <label class="radio-inline c-radio">
+                                        <input id="inlineradio1" type="radio" name="i-radio" value="option1" checked="checked" />
+                                        <span class="fa fa-circle"></span>Masculino</label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="inlineradio2" type="radio" name="i-radio" value="option2" />
+                                        <span class="fa fa-circle"></span>Feminino</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Naturalidade</label>
+                                <div class="controls">
+                                    <input type="text" name="naturalidade" data-parsley-group="step1" placeholder="Sua naturalidade" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Estado Civil</label>
+                                <div class="controls">
+                                    <label class="radio-inline c-radio">
+                                        <input id="inlineradio1" type="radio" name="i-radio" value="option1" checked="checked" />
+                                        <span class="fa fa-circle"></span>Casado</label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="inlineradio2" type="radio" name="i-radio" value="option2" />
+                                        <span class="fa fa-circle"></span>Solteiro</label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="inlineradio2" type="radio" name="i-radio" value="option2" />
+                                        <span class="fa fa-circle"></span>Viúvo</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                <div class="controls">
+                                    <input type="text" name="endereco" data-parsley-group="step1" placeholder="Seu endereço" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Complemento</label>
+                                <div class="controls">
+                                    <input type="text" name="complemento" data-parsley-group="step1" placeholder="Seu complemento" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Bairro</label>
+                                <div class="controls">
+                                    <input type="text" name="bairro" data-parsley-group="step1" placeholder="Seu bairro" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Cidade</label>
+                                <div class="controls">
+                                    <input type="text" name="cidade" data-parsley-group="step1" placeholder="Sua cidade" required="required" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END row -->
+
+                    <ul class="pager">
+                        <li class="next"><a ng-click="abrir(2)">Próximo <span>&rarr;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Wizard Step inputs -->
+                <!-- START Wizard Step inputs -->
+                <div id="step2" ng-show="ativa(2)">
+                    <legend>Meus Dados de Contato</legend>
+                    <!-- START row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="text" name="telefone" data-parsley-group="step2" placeholder="(00) 0000-0000" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Celular</label>
+                                <input type="text" name="celular" data-parsley-group="step2" placeholder="(00) 0 0000-0000" required="required" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END row -->
+                    <ul class="pager">
+                        <li class="previous">
+                            <a ng-click="abrir(1)">
+                                <span>&larr; Voltar</span>
+                            </a>
+                        </li>
+                        <li class="next"><a ng-click="abrir(3)">Próximo <span>&rarr;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Wizard Step inputs -->
+                <!-- START Wizard Step inputs -->
+                <div id="step3" ng-show="ativa(3)">
+                    <legend>Meus Dados de Usuário</legend>
+                    <!-- START row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" name="email" data-parsley-group="step3" placeholder="nome@email.com.br" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" name="senha" data-parsley-group="step3" placeholder="*******" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Foto</label>
+                                <div ng-click="abrirModal('lg')">
+                                    <img src="../../UfscarEgressos/backend-angular/app/img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Capa</label>
+                                <div ng-click="abrirModal()">
+                                    <img src="../../UfscarEgressos/backend-angular/app/img/user/05.jpg" alt="Image" class="media-box-object thumb48">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END row -->
+                    <ul class="pager">
+                        <li class="previous">
+                            <a ng-click="abrir(2)">
+                                <span>&larr; Voltar</span>
+                            </a>
+                        </li>
+                        <li class="next"><a ng-click="abrir(4)">Enviar <span>&rarr;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Wizard Step inputs -->
+                <!-- START Wizard Step inputs -->
+                <div id="step4" ng-show="ativa(4)">
+                    <div class="jumbotron">
+                        <h1>Concluído com Sucesso!</h1>
+                        <p>Parabéns, você já está cadastrado no sistema de egressos.</p>
+                        <p>
+                            <button type="button" class="btn btn-info btn-lg">Ir para home</button>
+                        </p>
+                    </div>
+
+                </div>
+                <!-- END Wizard Step inputs -->
+            </div>
+        </form>
+    </div>
+</div>
+ 
+<!-- END panel -->

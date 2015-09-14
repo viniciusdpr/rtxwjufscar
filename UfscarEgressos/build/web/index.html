@@ -1,0 +1,275 @@
+<html ng-app="App" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="{{app.description}}">
+        <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+        <title>Angle - Angular Bootstrap Admin Template</title>
+        <!-- Bootstrap styles-->
+        <!-- CSS-->
+        <link href="backend-angular/app/css/bootstrap.css" rel="stylesheet" type="text/css" data-ng-if="!app.layout.isRTL"/>
+        <link href="backend-angular/app/css/bootstrap-rtl.css" rel="stylesheet" type="text/css" data-ng-if="app.layout.isRTL"/>
+        <link href="backend-angular/app/css/app.css" rel="stylesheet" type="text/css" data-ng-if="!app.layout.isRTL"/>
+        <link href="backend-angular/app/css/app-rtl.css" rel="stylesheet" type="text/css" data-ng-if="app.layout.isRTL"/>
+        <link rel="shortcut icon" href="Content/Images/favicon.png" />
+        <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+        <link href="backend-angular/vendor/angularjs-toaster/toaster.css" rel="stylesheet" type="text/css"/>
+        <link href="backend-angular/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="backend-angular/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+        <link href="backend-angular/vendor/weather-icons/css/weather-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="backend-angular/vendor/whirl/dist/whirl.css" rel="stylesheet" type="text/css"/>
+        <!--DEPENDÊNCIA ImageCrop -->
+        <link href="backend-angular/vendor/ng-img-crop/compile/unminified/ng-img-crop.css" rel="stylesheet" type="text/css"/>
+
+    </head>  
+    <body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled}" class="layout-fixed aside-collapsed">
+        <section class="wrapper" data-ui-view>
+            <header class="topnavbar-wrapper ng-scope"><!-- START Top Navbar-->
+                <nav role="navigation" class="navbar topnavbar ng-scope">
+                    <!-- START navbar header-->
+                    <div class="navbar-header">
+                        <a href="#/" class="navbar-brand">
+                            <div class="brand-logo">
+                                <img src="backend-angular/app/img/logo.png" alt="App Logo" class="img-responsive">
+                            </div>
+                            <div class="brand-logo-collapsed">
+                                <img src="backend-angular/app/img/logo-single.png" alt="App Logo" class="img-responsive">
+                            </div>
+                        </a>
+                    </div>
+                    <!-- END navbar header-->
+                    <!-- START Nav wrapper-->
+                    <div class="nav-wrapper">
+                        <!-- START Left navbar-->
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                                <a href="" trigger-resize="" ng-click="app.layout.isCollapsed = !app.layout.isCollapsed" class="hidden-xs">
+                                    <em class="fa fa-navicon"></em>
+                                </a>
+                                <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                                <a href="" ng-click="app.asideToggled = !app.asideToggled" class="visible-xs sidebar-toggle">
+                                    <em class="fa fa-navicon"></em>
+                                </a>
+                            </li>
+                            <!-- START User avatar toggle-->
+                            <li>
+                                <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                                <a href="" ng-click="toggleUserBlock()">
+                                    <em class="icon-user"></em>
+                                </a>
+                            </li>
+                            <!-- END User avatar toggle-->
+                            <!-- START lock screen-->
+                            <li>
+                                <a ui-sref="page.lock" title="Lock screen" href="#/page/lock">
+                                    <em class="icon-lock"></em>
+                                </a>
+                            </li>
+                            <!-- END lock screen-->
+                        </ul>
+                        <!-- END Left navbar-->
+                        <!-- START Right Navbar-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Search icon-->
+                            <li>
+                                <a href="" search-open="search-open">
+                                    <em class="icon-magnifier"></em>
+                                </a>
+                            </li>
+                            <!-- Fullscreen (only desktops)-->
+                            <li class="visible-lg">
+                                <a href="" toggle-fullscreen="toggle-fullscreen">
+                                    <em class="fa fa-expand"></em>
+                                </a>
+                            </li>
+                            <!-- START Alert menu-->
+                            <li dropdown="" class="dropdown dropdown-list">
+                                <a dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+                                    <em class="icon-bell"></em>
+                                    <div class="label label-danger">11</div>
+                                </a>
+                                <!-- START Dropdown menu-->
+                                <ul class="dropdown-menu animated flipInX">
+                                    <li>
+                                        <!-- START list group-->
+                                        <div class="list-group">
+                                            <!-- list item-->
+                                            <a href="" class="list-group-item">
+                                                <div class="media-box">
+                                                    <div class="pull-left">
+                                                        <em class="fa fa-twitter fa-2x text-info"></em>
+                                                    </div>
+                                                    <div class="media-box-body clearfix">
+                                                        <p class="m0">New followers</p>
+                                                        <p class="m0 text-muted">
+                                                            <small>1 new follower</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- list item-->
+                                            <a href="" class="list-group-item">
+                                                <div class="media-box">
+                                                    <div class="pull-left">
+                                                        <em class="fa fa-envelope fa-2x text-warning"></em>
+                                                    </div>
+                                                    <div class="media-box-body clearfix">
+                                                        <p class="m0">New e-mails</p>
+                                                        <p class="m0 text-muted">
+                                                            <small>You have 10 new emails</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- list item-->
+                                            <a href="" class="list-group-item">
+                                                <div class="media-box">
+                                                    <div class="pull-left">
+                                                        <em class="fa fa-tasks fa-2x text-success"></em>
+                                                    </div>
+                                                    <div class="media-box-body clearfix">
+                                                        <p class="m0">Pending Tasks</p>
+                                                        <p class="m0 text-muted">
+                                                            <small>11 pending task</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- last list item -->
+                                            <a href="" class="list-group-item">
+                                                <small class="ng-scope"><span class="ng-scope">More notifications</span></small>
+                                                <span class="label label-danger pull-right">14</span>
+                                            </a>
+                                        </div>
+                                        <!-- END list group-->
+                                    </li>
+                                </ul>
+                                <!-- END Dropdown menu-->
+                            </li>
+                            <!-- END Alert menu-->
+                            <!-- START Offsidebar button-->
+                            <li>
+                                <a href="" ng-click="app.offsidebarOpen = !app.offsidebarOpen">
+                                    <em class="icon-notebook"></em>
+                                </a>
+                            </li>
+                            <!-- END Offsidebar menu-->
+                        </ul>
+                        <!-- END Right Navbar-->
+                    </div>
+                    <!-- END Nav wrapper-->
+                    <!-- START Search form-->
+                    <form role="search" action="search.html" class="navbar-form ng-pristine ng-valid">
+                        <div class="form-group has-feedback">
+                            <input type="text" placeholder="Type and hit enter.." class="form-control">
+                            <div search-dismiss="search-dismiss" class="fa fa-times form-control-feedback"></div>
+                        </div>
+                        <button type="submit" class="hidden btn btn-default">Submit</button>
+                    </form>
+                    <!-- END Search form-->
+                </nav>
+                <!-- END Top Navbar--></header>
+
+            <aside class="aside" ng-mouseover="app.layout.isCollapsed = false" ng-mouseleave="app.layout.isCollapsed = true">
+                <div class="aside-inner ng-scope">
+                    <menu style="padding:0px"></menu>
+                </div>
+            </aside>
+
+            <aside class="offsidebar ng-scope" ng-controller="MenuDireitoController"><!-- START Off Sidebar (right)-->
+                <nav class="ng-scope">
+                    <div justified="true" class="ng-isolate-scope">
+                        <ul class="nav nav-tabs nav-justified" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" >
+                            <li ng-class="{active: selected == 0}" class="ng-isolate-scope">
+                                <a href="" ng-click="select(0)"  class="ng-binding"><tab-heading class="ng-scope">
+                                        <em class="icon-users fa-lg"></em>
+                                    </tab-heading></a>
+                            </li>
+                            <li ng-class="{active: selected == 1}" class="ng-isolate-scope">
+                                <a href="" ng-click="select(1)"  class="ng-binding"><tab-heading class="ng-scope">
+                                        <em class="icon-equalizer fa-lg"></em>
+                                    </tab-heading></a>
+                            </li>
+                        </ul>
+                        <div ng-show="selected == 0">
+                            <amigos></amigos>
+                        </div>
+                        <div ng-show="selected == 1">
+                            <configuracoes></configuracoes>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+
+            <section style="padding:0px">
+
+                <div class="content-wrapper" data-ui-view style="padding:0px">
+                    <ng-view>       
+                </div>  
+
+            </section>
+            #end include from app.html
+        </section>
+        <!-- Scripts-->
+
+        <script src="Scripts/Angular/angular.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="backend-angular/vendor/fastclick/lib/fastclick.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/Flot/jquery.flot.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/modernizr/modernizr.js" type="text/javascript"></script>
+        <!--DEPENDÊNCIA ImageCrop -->
+        <script src="backend-angular/vendor/ng-img-crop/compile/unminified/ng-img-crop.js" type="text/javascript"></script>
+        
+        <script src="backend-angular/vendor/flot.tooltip/js/jquery.flot.tooltip.min.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/Flot/jquery.flot.resize.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/Flot/jquery.flot.pie.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/Flot/jquery.flot.time.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/Flot/jquery.flot.categories.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/flot-spline/js/jquery.flot.spline.min.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/screenfull/dist/screenfull.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/animo.js/animo.js" type="text/javascript"></script>
+        <script src="backend-angular/app/vendor/sparklines/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/jquery-classyloader/js/jquery.classyloader.min.js" type="text/javascript"></script>
+        <script src="backend-angular/vendor/angularjs-toaster/toaster.js" type="text/javascript"></script>
+        <script src="Scripts/Externos/Modal/ui-bootstrap-tpls-0.13.4.min.js" type="text/javascript"></script>
+        <script src="Scripts/App/app.js" type="text/javascript"></script>
+        <script src="Scripts/Roteamento/Roteamento.js" type="text/javascript"></script>
+        <script src="Scripts/Servico/ModalService.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/MenuDireitoController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/PerfilController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/QuestionarioController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/CadastrarEventosController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/CadastrarVagasController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/VisualizarVagasController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/EmpregadorController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/TimelineController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/ModalController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/CurriculoController.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/PostagemNoticiaController.js" type="text/javascript"></script>
+        <script src="Scripts/Diretivas/ModalRecortarFoto.js" type="text/javascript"></script>
+        <script src="Scripts/Diretivas/Configuracoes.js" type="text/javascript"></script>
+        <script src="Scripts/Controladores/PostController.js" type="text/javascript"></script>
+        <script src="Scripts/Diretivas/Amigos.js" type="text/javascript"></script>
+        <script src="Scripts/Diretivas/Menu.js" type="text/javascript"></script>
+        <!--<script src="backend-angular/vendor/ui.bootstrap/ui-bootstrap-tpls-0.13.3.min.js" type="text/javascript"></script>-->
+
+
+        <script>
+                            $(document).ready(function () {
+                                function fix_height() {
+                                    var h = $("#tray").height();
+                                    $("#preview").attr("height", (($(window).height()) - h) + "px");
+                                }
+                                $(window).resize(function () {
+                                    fix_height();
+                                }).resize();
+                                //$("#preview").contentWindow.focus();
+                            });
+        </script>
+    </body>
+</html>

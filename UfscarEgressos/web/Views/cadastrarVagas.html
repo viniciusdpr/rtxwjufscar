@@ -1,0 +1,95 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="well">
+            <h4>Cadastro de Oportunidades de Emprego</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Vaga</label>
+                        <div class="controls">
+                            <input type="text" name="titulovaga" placeholder="Titulo da Vaga" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Area de Atuação</label>
+                        <div class="controls">
+                            <input type="text" name="areadeatuacao" placeholder="Area de Atuação" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Data de Publicação</label>
+                        <div class="controls">
+                            <input type="date" name="publicacao" placeholder="00/00/0000" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Salario</label>
+                        <div class="controls">
+                            <input type="text" name="salario" placeholder="Salario" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Empresa</label>
+                        <div class="controls">
+                            <input type="text" name="Empresa" placeholder="Empresa" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>                                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Contato</label>
+                        <div class="controls">
+                            <input type="text" name="Contato" placeholder="Contato" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <div class="row">    
+            <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Regime Trabalhista</label>
+                        <div class="controls">
+                            <input type="text" name="regimetrabalhista" placeholder="Regime Trabalhista" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Data de Validade</label>
+                        <div class="controls">
+                            <input type="date" name="validade" placeholder="00/00/0000" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="row">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Descrição</label>
+                        <div class="col-sm-12">
+                            <script type="text/ng-template" id="ng-wig/views/ng-wig.html">
+                                <div class="ng-wig"><div class="btn-group btn-group-sm wd-wide"><button type="button" title="Header" ng-click="execCommand('formatblock', '&lt;h1&gt;')" class="btn btn-sm btn-default"><em class="fa fa-header"></em></button><button type="button" title="Paragraph" ng-click="execCommand('formatblock', '&lt;p&gt;')" class="btn btn-sm btn-default"><em class="fa fa-paragraph"></em></button><button type="button" title="Unordered List" ng-click="execCommand('insertunorderedlist')" class="btn btn-sm btn-default"><em class="fa fa-list-ul"></em></button><button type="button" title="Ordered List" ng-click="execCommand('insertorderedlist')" class="btn btn-sm btn-default"><em class="fa fa-list-ol"></em></button><button type="button" title="Bold" ng-click="execCommand('bold')" class="btn btn-sm btn-default"><em class="fa fa-bold"></em></button><button type="button" title="Italic" ng-click="execCommand('italic')" class="btn btn-sm btn-default"><em class="fa fa-italic"></em></button><button type="button" title="link" ng-click="execCommand('createlink')" class="btn btn-sm btn-default"><em class="fa fa-link"></em></button><button type="button" title="Edit Html" ng-class="{ 'nw-button--active': editMode }" ng-click="toggleEditMode()" class="pull-right btn btn-sm btn-default"><em class="fa fa-pencil"></em></button></div><div class="nw-editor"><textarea ng-show="editMode" ng-model="content" class="nw-editor__src"> </textarea><iframe scrolling="{{ autoexpand ? 'no' : 'yes' }}" frameBorder="0" ng-hide="editMode" ng-model="content" ng-wig-editable="" class="nw-editor__res"></iframe></div></div>
+                            </script>
+                            <div class="ng-wig ng-isolate-scope" ng-wig="form.wysiwygContent"><div class="btn-group btn-group-sm wd-wide"><button type="button" title="Header" ng-click="execCommand('formatblock', '<h1>')" class="btn btn-sm btn-default"><em class="fa fa-header"></em></button><button type="button" title="Paragraph" ng-click="execCommand('formatblock', '<p>')" class="btn btn-sm btn-default"><em class="fa fa-paragraph"></em></button><button type="button" title="Unordered List" ng-click="execCommand('insertunorderedlist')" class="btn btn-sm btn-default"><em class="fa fa-list-ul"></em></button><button type="button" title="Ordered List" ng-click="execCommand('insertorderedlist')" class="btn btn-sm btn-default"><em class="fa fa-list-ol"></em></button><button type="button" title="Bold" ng-click="execCommand('bold')" class="btn btn-sm btn-default"><em class="fa fa-bold"></em></button><button type="button" title="Italic" ng-click="execCommand('italic')" class="btn btn-sm btn-default"><em class="fa fa-italic"></em></button><button type="button" title="link" ng-click="execCommand('createlink')" class="btn btn-sm btn-default"><em class="fa fa-link"></em></button><button type="button" title="Edit Html" ng-class="{ 'nw-button--active': editMode }" ng-click="toggleEditMode()" class="pull-right btn btn-sm btn-default nw-button--active"><em class="fa fa-pencil"></em></button></div><div class="nw-editor" style="height: 34px;"><textarea ng-show="editMode" ng-model="content" class="nw-editor__src ng-valid ng-touched ng-dirty ng-valid-parse"> </textarea><iframe scrolling="no" frameborder="0" ng-hide="editMode" ng-model="content" ng-wig-editable="" class="nw-editor__res ng-untouched ng-valid ng-dirty ng-hide"></iframe></div></div>
+                        </div>
+                    </div>
+                </fieldset> 
+            </div>
+            <button type="button" class="btn btn-default col-4" >Enviar</button>
+        </div>
+    </div>
+</div>
